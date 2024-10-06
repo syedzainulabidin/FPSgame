@@ -9,15 +9,10 @@ document.body.addEventListener('mousemove', function(event) {
 });
 
 window.onload = function() {
-    // Get the container element
     const container = document.querySelector('.container');
-    // container.document.removeChild('div')
 
-    // Get the width and height of the container
     const containerWidth = container.clientWidth;
     const containerHeight = container.clientHeight;
-
-    // Function to generate a random position within the container
     function getRandomPosition(size, max) {
         return Math.floor(Math.random() * (max - size));
     }
@@ -25,21 +20,11 @@ window.onload = function() {
     for (let i = 0; i < 1; i++) {
         const target = document.createElement('div');
         target.classList.add('targets');
-
-        // Set random positions for the target divs
         const randomX = getRandomPosition(50, containerWidth);
         const randomY = getRandomPosition(50, containerHeight);
 
         target.style.left = `${randomX}px`;
         target.style.top = `${randomY}px`;
-
-        // Append the target divs to the container
         container.appendChild(target);
     }
 };
-
-
-
-// function mark1(){
-//    document.querySelector('.targets').style.background = 'green'
-// }
